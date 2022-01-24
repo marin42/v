@@ -1,9 +1,7 @@
-import { useEffect, useState } from 'react'
-import logo from './logo.svg'
 import './App.css'
 
-import type { Data } from './api/types'
-import { useApi } from './api/useApi'
+//import { useApi } from './api/useApi'
+
 import { useFakeApi } from './api/useFakeApi'
 import { useSearch } from './search/useSearch'
 
@@ -11,6 +9,8 @@ import { SearchView } from './search/Search'
 import { MonetisationList } from './visualization/List'
 
 function App() {
+  // Uncomment to use the Real API
+  // const api = useApi();
   const api = useFakeApi();
   const search = useSearch(api);
 

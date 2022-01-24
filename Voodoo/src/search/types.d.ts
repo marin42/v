@@ -1,19 +1,12 @@
 import { Data, Dimension, Aggregate } from '../api/types'
 
-export type DimensionsValues = {
-  os: string[];
-  country: string[];
-  format: string[];
-  game: string[];
-  placement: string[];    
-}
+export type DimensionsValues = Record<Dimension, string[]>
 
 export type Search = {
+  result: Data[];
+  
   startDate: string;
   endDate: string;
-
-  result: Data[];
-
   setStartDate: (value: string) => void;
   setEndDate: (value: string) => void;
 
