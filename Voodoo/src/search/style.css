@@ -1,0 +1,18 @@
+.search {
+    height: 8em;
+    display: flex;
+    flex-direction: column;
+}
+.search .dimensions, .search .date, .search .aggregates {
+    display: flex;
+    flex-direction: row;
+}
+
+.date-input {
+    margin-right: 1em;
+}
+
+.select {
+    margin-left: 1em;
+    margin-right: 1em;
+}
