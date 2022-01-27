@@ -44,9 +44,10 @@ export const SearchView: React.FunctionComponent<SearchProps> = ({ search }) => 
         startText="Start Date"
         endText="End Date"
         value={[search.startDate, search.endDate]}
-        onChange={([startDate, endDate]) => {
-          if (startDate) search.setStartDate(startDate)
-          if (endDate) search.setEndDate(endDate)
+        onChange={(dates: [Date | null, Date | null]) => {
+          const [startDate, endDate] = dates
+          if (startDate) search.setStartDate(`${startDate.getFullYear()}-${startDate.getMonth() + 1}-${startDate.getDate()}`)
+          if (endDate) search.setEndDate(`${endDate.getFullYear()}-${endDate.getMonth() + 1}-${endDate.getDate()}`)
         }}
         renderInput={(startProps, endProps) => (
           <>
